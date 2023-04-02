@@ -1,8 +1,5 @@
 package gr.uop;
 
-
-
-
 import javafx.application.Application;
 import javafx.geometry.HPos;
 import javafx.geometry.Insets;
@@ -34,48 +31,21 @@ public class App extends Application {
         VBox vboxSets = new VBox();
         CheckBox cb1 = new CheckBox("Snap to Grid");
         CheckBox cb2 = new CheckBox("Show Grid");
-        TitledPane gSets = new TitledPane("Grid Settings", vboxSets);    //The titled pane for the settings
+        TitledPane gSets = new TitledPane("Grid Settings", vboxSets); // The titled pane for the settings
         gSets.setCollapsible(false);
-        vboxSets.getChildren().addAll(cb1,cb2);
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        vboxSets.getChildren().addAll(cb1, cb2);
+        vboxSets.setSpacing(10);
 
         grid.setPadding(new Insets(10));
-        
-        // Δυνατότητα ορισμού απόστασης μεταξύ τους (σε pixel).
+
         grid.setHgap(10);
         grid.setVgap(10);
 
-
-
-
-
-
-
-        grid.add(gSets,0,0);
-
-
-
-
-
+        grid.add(gSets, 0, 0);
 
         var scene = new Scene(grid, 500, 180);
         stage.setScene(scene);
-        stage.setTitle("Settings"); 
+        stage.setTitle("Settings");
         stage.show();
     }
 
