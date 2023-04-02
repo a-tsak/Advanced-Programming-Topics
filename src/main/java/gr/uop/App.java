@@ -11,6 +11,7 @@ import javafx.geometry.Pos;
 import javafx.geometry.VPos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
@@ -31,11 +32,12 @@ public class App extends Application {
     public void start(Stage stage) {
         GridPane grid = new GridPane();
         VBox vboxSets = new VBox();
-        
+        CheckBox cb1 = new CheckBox("Snap to Grid");
+        CheckBox cb2 = new CheckBox("Show Grid");
         TitledPane gSets = new TitledPane("Grid Settings", vboxSets);    //The titled pane for the settings
         gSets.setCollapsible(false);
-        //gSets.setText("Grid Settings");
-        //gSets.add(vboxSets);
+        vboxSets.getChildren().addAll(cb1,cb2);
+        
 
 
 
