@@ -36,6 +36,7 @@ public class App extends Application {
         CheckBox cb2 = new CheckBox("Show Grid");
         TitledPane gSets = new TitledPane("Grid Settings", vboxSets);    //The titled pane for the settings
         gSets.setCollapsible(false);
+        vboxSets.setSpacing(10);
         vboxSets.getChildren().addAll(cb1,cb2);
         
 
