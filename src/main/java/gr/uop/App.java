@@ -31,12 +31,24 @@ public class App extends Application {
     @Override
     public void start(Stage stage) {
         GridPane grid = new GridPane();
-        VBox vboxSets = new VBox();
+
+//The first box with the grid settings is a titled pane with a vbox inside, containing two checkboxes
+
+        VBox vboxSets = new VBox();                     
         CheckBox cb1 = new CheckBox("Snap to Grid");
         CheckBox cb2 = new CheckBox("Show Grid");
         TitledPane gSets = new TitledPane("Grid Settings", vboxSets);    //The titled pane for the settings
         gSets.setCollapsible(false);
         vboxSets.getChildren().addAll(cb1,cb2);
+
+
+//The second box is another titled pane with a vbox, containing 2 hboxes with a label and a textfield.
+        VBox vboxDims = new VBox();                     
+        HBox hbox1 = new HBox();
+        HBox hbox2 = new HBox();
+        TitledPane gDims = new TitledPane("Grid Dimensions", vboxDims);    //The titled pane for the Dimensions
+        gDims.setCollapsible(false);
+        vboxDims.getChildren().addAll();
         
 
 
@@ -67,7 +79,7 @@ public class App extends Application {
 
 
         grid.add(gSets,0,0);
-
+        grid.add(gDims,1,0);
 
 
 
