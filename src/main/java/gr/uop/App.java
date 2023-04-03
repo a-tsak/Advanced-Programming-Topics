@@ -28,6 +28,7 @@ public class App extends Application {
     @Override
     public void start(Stage stage) {
         GridPane grid = new GridPane();
+
         VBox vboxSets = new VBox();
         CheckBox cb1 = new CheckBox("Snap to Grid");
         CheckBox cb2 = new CheckBox("Show Grid");
@@ -36,12 +37,29 @@ public class App extends Application {
         vboxSets.getChildren().addAll(cb1, cb2);
         vboxSets.setSpacing(10);
 
+        VBox vboxDims = new VBox();
+        Label label1 = new Label("Horizontal: ");
+        Label label2 = new Label("Vertical: ");
+        TextField tf1 = new TextField();
+        TextField tf2 = new TextField();
+        HBox box1 = new HBox();
+        box1.setPadding(new Insets(20));
+        box1.getChildren().addAll(label1, tf1);
+        HBox box2 = new HBox();
+        box2.setPadding(new Insets(20));
+        box2.getChildren().addAll(label2, tf2);
+        TitledPane gDims = new TitledPane("Grid Dimensions", vboxDims);
+        gDims.setCollapsible(false);
+        vboxDims.getChildren().addAll(box1, box2);
+        vboxDims.setSpacing(10);
+
         grid.setPadding(new Insets(10));
 
         grid.setHgap(10);
         grid.setVgap(10);
 
         grid.add(gSets, 0, 0);
+        grid.add(gDims, 1, 0);
 
         var scene = new Scene(grid, 500, 180);
         stage.setScene(scene);
